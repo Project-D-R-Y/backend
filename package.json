@@ -1,0 +1,26 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/warlord-hash/new-implorium.git"
+  },
+  "author": "studzy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/warlord-hash/new-implorium/issues"
+  },
+  "homepage": "https://github.com/warlord-hash/new-implorium#readme",
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "ts-node": "^10.2.0",
+    "typescript": "^4.3.5"
+  }
+}
