@@ -5,7 +5,7 @@ import { User } from "../models/User"
 
 declare module 'express-session' {
     export interface SessionData {
-      user_id: { [key: number]: any };
+      user_id: number
     }
   }
 
@@ -15,6 +15,40 @@ export class AuthController {
 
     constructor() {
         this.router.post("/create-account", this.createAccount)
+    }
+
+    login = async (req : express.Request, res : express.Response) => {
+        try {
+            if(typeof req.session.user_id != "undefined") {
+                return res.json({
+                    error: true,
+                    message: "Forbidden"
+                })
+            }
+
+            const user = await User.findOne({
+                where: {
+                    username: req.body.username
+                }
+            })
+
+            if(user) {
+                if(bcrypt.compare(req.body.password, user.Password)) {
+                    req.session.user_id = user.ID
+                    return res.json({
+                        error: false
+                    })
+                }
+            } else {
+                return res.json({
+                    error: true,
+                    message: "Please enter a correct username and password."
+                })
+            }
+        }
+        catch(err) {
+            console.log(err)
+        }
     }
 
     createAccount = async (req: express.Request, res: express.Response) => {
