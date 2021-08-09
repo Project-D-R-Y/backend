@@ -1,10 +1,10 @@
-import { Table, Column, AutoIncrement, NotNull, Length, IsEmail, CreatedAt, UpdatedAt } from "sequelize-typescript"
+import { Table, Model, Column, AutoIncrement, NotNull, Length, IsEmail, CreatedAt, UpdatedAt } from "sequelize-typescript"
 
 @Table
-export class User {
+export class User extends Model {
     @Column
     @AutoIncrement
-    id? : number
+    ID? : number
 
     @Column
     @NotNull
@@ -13,22 +13,22 @@ export class User {
         min: 1,
         max: 48
     })
-    username! : string
+    Username! : string
 
     @Column
     @NotNull
     @IsEmail
-    email! : string
+    Email! : string
 
     @Column
     @NotNull
-    password! : string
+    Password! : string
 
     @Column
     @CreatedAt
-    createdAt! : Date
+    CreatedAt! : Date
 
     @Column
     @UpdatedAt
-    updatedAt! : Date
+    UpdatedAt! : Date
 }

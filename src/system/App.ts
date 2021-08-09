@@ -37,7 +37,7 @@ export class App {
         this.port = port
 
         controllers.forEach((controller : any) => {
-            this.app.use(controller.prefix, controller.router)
+            this.app.use(`/v1-api/${controller.prefix}`, controller.router)
         })
     }
 
