@@ -1,12 +1,11 @@
 import * as express from "express"
 import * as bcrypt from "bcrypt"
 
-import { ValidationError } from "sequelize/types";
 import { User } from "../models/User"
 
 export class AuthController {
     public router : any = express.Router();
-    public prefix : string = "/auth"
+    public prefix : string = "auth"
 
     constructor() {
         this.router.post("/create-account", this.createAccount)
@@ -35,9 +34,7 @@ export class AuthController {
             })
         }
         catch(err) {
-            if(err instanceof ValidationError) {
-                console.log(err.errors[0])
-            }
+            console.log(err);
         }
     }
 }

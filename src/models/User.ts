@@ -1,34 +1,38 @@
-import { Table, Model, Column, AutoIncrement, NotNull, Length, IsEmail, CreatedAt, UpdatedAt } from "sequelize-typescript"
+import { Table, Model, Column, AutoIncrement, NotNull, Length, IsEmail, CreatedAt, UpdatedAt, PrimaryKey, Unique, AllowNull } from "sequelize-typescript"
+import { DataType } from "sequelize-typescript"
 
 @Table
 export class User extends Model {
-    @Column
     @AutoIncrement
+    @PrimaryKey
+    @Column
     ID? : number
 
-    @Column
-    @NotNull
+    @Unique
+    @AllowNull(false)
     @Length({
         msg: "Your username must be between 1 and 48 characters long.",
         min: 1,
         max: 48
     })
+    @Column
     Username! : string
 
-    @Column
-    @NotNull
+    @Unique
+    @AllowNull(false)
     @IsEmail
+    @Column(DataType.TEXT)
     Email! : string
 
+    @AllowNull(false)
     @Column
-    @NotNull
     Password! : string
 
-    @Column
     @CreatedAt
+    @Column
     CreatedAt! : Date
 
-    @Column
     @UpdatedAt
+    @Column
     UpdatedAt! : Date
 }
