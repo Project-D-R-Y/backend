@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/warlord-hash/new-implorium#readme",
   "devDependencies": {
+    "@types/cookie-parser": "^1.4.2",
     "@types/cors": "^2.8.12",
     "@types/express": "^4.17.13",
     "@types/express-session": "^1.17.4",
@@ -30,6 +31,7 @@
   "dependencies": {
     "cookie-parser": "^1.4.5",
     "express-session-sequelize": "^2.3.0",
+    "mysql2": "^2.3.0",
     "sequelize": "^6.6.5",
     "sequelize-typescript": "^2.1.0"
   }
