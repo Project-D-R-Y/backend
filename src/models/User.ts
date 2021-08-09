@@ -1,4 +1,4 @@
-import { Table, Column, AutoIncrement, NotNull, Length, Not, IsEmail, CreatedAt, UpdatedAt } from "sequelize-typescript"
+import { Table, Column, AutoIncrement, NotNull, Length, IsEmail, CreatedAt, UpdatedAt } from "sequelize-typescript"
 
 @Table
 export class User {
