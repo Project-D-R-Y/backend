@@ -3,6 +3,12 @@ import * as bcrypt from "bcrypt"
 
 import { User } from "../models/User"
 
+declare module 'express-session' {
+    export interface SessionData {
+      user_id: { [key: number]: any };
+    }
+  }
+
 export class AuthController {
     public router : any = express.Router();
     public prefix : string = "auth"
@@ -13,6 +19,13 @@ export class AuthController {
 
     createAccount = async (req: express.Request, res: express.Response) => {
         try {
+            if(typeof req.session.user_id != "undefined") {
+                return res.json({
+                    error: true,
+                    message: "Forbidden"
+                })
+            }
+
             if(req.body.password.length < 8) {
                 return res.json({
                     error: true,
@@ -34,7 +47,10 @@ export class AuthController {
             })
         }
         catch(err) {
-            console.log(err);
+            return res.json({
+                error: true,
+                message: err.errors[0].message
+            })
         }
     }
 }
