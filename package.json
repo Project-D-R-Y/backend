@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/warlord-hash/backend.git"
+    "url": "git+https://github.com/Project-D-R-Y/backend.git"
   },
   "author": "studzy",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/warlord-hash/backend/issues"
+    "url": "https://github.com/Project-D-R-Y/issues"
   },
-  "homepage": "https://github.com/warlord-hash/backend#readme",
+  "homepage": "https://github.com/Project-D-R-Y#readme",
   "devDependencies": {
     "@types/bcrypt": "^5.0.0",
     "@types/cookie-parser": "^1.4.2",
