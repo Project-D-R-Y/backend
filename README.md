@@ -1,4 +1,4 @@
-# new-implorium
+# backend
 
 To begin the installation process, please run the following command in your terminal. (while in the directory where you extracted the source code)
 

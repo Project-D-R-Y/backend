@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/warlord-hash/new-implorium.git"
+    "url": "git+https://github.com/warlord-hash/backend.git"
   },
   "author": "studzy",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/warlord-hash/new-implorium/issues"
+    "url": "https://github.com/warlord-hash/backend/issues"
   },
-  "homepage": "https://github.com/warlord-hash/new-implorium#readme",
+  "homepage": "https://github.com/warlord-hash/backend#readme",
   "devDependencies": {
     "@types/bcrypt": "^5.0.0",
     "@types/cookie-parser": "^1.4.2",
