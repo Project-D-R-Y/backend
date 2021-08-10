@@ -1,4 +1,4 @@
-import { Model, Table, Column, AutoIncrement, PrimaryKey, AllowNull, Length, CreatedAt, UpdatedAt, BelongsTo, ForeignKey } from "sequelize-typescript"
+import { Model, Table, Column, AutoIncrement, PrimaryKey, AllowNull, Length, CreatedAt, UpdatedAt, BelongsTo, ForeignKey, HasOne } from "sequelize-typescript"
 import { User } from "./User"
 
 @Table({
@@ -11,8 +11,10 @@ export class Feed extends Model {
     ID? : number
 
     @AllowNull(false)
-    @ForeignKey(() => User)
-    @BelongsTo(() => User)
+    @BelongsTo(() => User, {
+        foreignKey: "UserID",
+        as: "User"
+    })
     @Column
     UserID! : number
 

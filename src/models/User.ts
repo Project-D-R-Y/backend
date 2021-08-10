@@ -1,10 +1,20 @@
-import { Table, Model, Column, AutoIncrement, NotNull, Length, IsEmail, CreatedAt, UpdatedAt, PrimaryKey, Unique, AllowNull } from "sequelize-typescript"
+import { Table, Model, Column, AutoIncrement, Length, IsEmail, CreatedAt, UpdatedAt, PrimaryKey, Unique, AllowNull, HasMany, Scopes } from "sequelize-typescript"
 import { DataType } from "sequelize-typescript"
+import { Feed } from "./Feed"
 
+@Scopes(() => ({
+    public: {
+        attributes: ['ID', 'Username', 'CreatedAt', 'UpdatedAt']
+    }
+}))
 @Table
 export class User extends Model {
     @AutoIncrement
     @PrimaryKey
+    @HasMany(() => Feed, {
+        foreignKey: "UserID",
+        as: "Feed_Posts"
+    })
     @Column
     ID? : number
 
