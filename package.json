@@ -13,9 +13,9 @@
   "author": "studzy",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Project-D-R-Y/issues"
+    "url": "https://github.com/Project-D-R-Y/backendissues"
   },
-  "homepage": "https://github.com/Project-D-R-Y#readme",
+  "homepage": "https://github.com/Project-D-R-Y/backend#readme",
   "devDependencies": {
     "@types/bcrypt": "^5.0.0",
     "@types/cookie-parser": "^1.4.2",
