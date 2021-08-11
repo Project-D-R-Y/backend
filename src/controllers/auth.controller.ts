@@ -17,6 +17,12 @@ export class AuthController {
         this.router.post("/create-account", this.createAccount)
     }
 
+    sessionCheck = async (req : express.Request, res : express.Response) => {
+        return res.json({
+            loggedIn: (typeof req.session.user_id != "undefined")
+        })
+    }
+
     login = async (req : express.Request, res : express.Response) => {
         try {
             if(typeof req.session.user_id != "undefined") {
